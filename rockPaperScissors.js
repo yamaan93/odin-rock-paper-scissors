@@ -32,21 +32,21 @@ function playRound(playerSelection, computerSelection = getComputerChoice()){
     }
     else {
         if(playerSelection == "rock" && computerSelection == "scissors"){
-            outcome = "you win, rock beats scrissors";
+            outcome = "you win! rock beats scrissors";
         }
         else if (playerSelection == "rock"){
             outcome = "you lose! paper beats rock";
         }
     
         if(playerSelection == "paper" && computerSelection == "rock"){
-            outcome = "you win, paper beats rock";
+            outcome = "you win! paper beats rock";
         }
         else if (playerSelection == "paper"){
             outcome = "you lose! scissors beat paper";
         }
     
         if(playerSelection == "scissors" && computerSelection == "paper"){
-            outcome = "you win, scissors beats paper";
+            outcome = "you win! scissors beats paper";
         }
         else if (playerSelection == "scissors"){
             outcome = "you lose! rock beats scissors";
@@ -57,3 +57,15 @@ function playRound(playerSelection, computerSelection = getComputerChoice()){
     
 }
 
+//play 5 rounds
+function game(){
+    let score = 0;
+    for(let i = 0; i<5; i++){
+        if(playRound(prompt("rock? paper? or scissors?")).slice(0,8) == "you win!"){
+            score++;
+        }
+        console.log("your score:" + score + "/5");
+
+    }
+    return score;
+}
